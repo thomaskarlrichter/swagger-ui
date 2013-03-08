@@ -18,8 +18,16 @@
             </div>
             <div class='content' id='{{resourceName}}_{{nickname}}_{{httpMethod}}_{{number}}_content' style='display:none'>
                 {{#if notes}}
-                <h4>Implementation Notes</h4>
-                <p>{{{notes}}}</p>
+                        <h4>Implementation Notes <a href='#' class='hider'>Hide Implementation Notes</a></h4>
+                     <div class='notes_text'>
+                       <p>{{{notes}}}</p>
+                    </div>
+                {{/if}}
+                {{#if examples}}
+                        <h4>Examples <a href='#' class='hider'>Hide Examples</a></h4>
+                    <div class='examples_text'>
+                      <p>{{{examples}}}</p>
+                    </div>
                 {{/if}}
                 {{#if responseClass}}
                     <h4>Response Class</h4>

@@ -3,6 +3,8 @@ class OperationView extends Backbone.View
   'submit .sandbox'         : 'submitOperation'
   'click .submit'           : 'submitOperation'
   'click .response_hider'   : 'hideResponse'
+  'click .hider'            : 'hideText'
+  'click .shower'           : 'showText'
   'click .toggleOperation'  : 'toggleOperationContent'
   }
 
@@ -167,6 +169,21 @@ class OperationView extends Backbone.View
     e?.preventDefault()
     $(".response", $(@el)).slideUp()
     $(".response_hider", $(@el)).fadeOut()
+  
+  # handler for hide TODO
+  hideText: (e) ->
+    e?.preventDefault()
+    console.log @$(':contains("Examples")')
+    console.log e.target
+    # wie kann ich vom aktuellen element ausgehend das nächste div ausblenden
+    # den text ändern 
+    # $(@.next()).slideToogle()
+
+  # handler for hide TODO
+  showText: (e) ->
+    e?.preventDefault()
+    console.log "hallo"
+    $("#examples_text", $(@el)).slideUp()
 
 
   # Show response from server
